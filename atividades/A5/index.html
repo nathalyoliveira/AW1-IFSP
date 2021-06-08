@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+
+<body>
+
+    <h1>FORMULÁRIO</h1>
+
+    <form action="index.html" target="_blank" method="POST">
+        <fieldset>
+            <legend>Dados pessoais:</legend>
+            <label for="fname">Nome:</label><br>
+            <input type="text" id="fname" name="fname" autofocus required><br>
+            <label for="snome">Sobrenome:</label><br>
+            <input type="text" id="snome" name="snome" required><br>
+            <label for="idade">Idade:</label><br>
+            <input type="number" id="idade" name="idade"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="nasc">Data de nascimento:</label><br>
+            <input type="date" id="nasc" name="nasc"><br>
+            <label for="rg">RG:</label><br>
+            <input type="file" id="rg" name="rg" required><br>
+        </fieldset>
+
+        <br>
+        <fieldset>
+            <legend>Endereço:</legend>
+            <label for="rua">Rua:</label>
+            <input type="text" id="rua" name="rua"><br>
+            <label for="num">N°:</label>
+            <input type="text" id="num" name="num"><br>
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" name="bairro"><br>
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep"><br>
+
+            Selecione o estado
+            <select id="estado" name="estado">
+                UF:
+                <option value=""></option>
+                <option value="sp">SP</option>
+                <option value="mg">MG</option>
+                <option value="ba">BA</option>
+                <option value="rj">RJ</option>
+            </select>
+
+            <br>
+            Selecione a cidade
+            <input list="cidade">
+            <datalist id="cidade">
+                <option value="São Paulo">
+                <option value="Guarulhos">
+                <option value="Saõ Bernardo">
+            </datalist><br>
+
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Dados Acadêmicos</legend>
+            <div>
+                <label for="us">Unidade de Ensino:</label>
+                <input type="text" id="us" name="us" value="IFSP" readonly><br>
+            </div>
+            <br>
+            <div>
+                <label for="dados">Análise e Desenvolvimento de Sistemas:</label>
+                <input type="radio" id="dados" name="dados"><br>
+                <label for="dados">Médio integrado ao técnico em Informática:</label>
+                <input type="radio" id="dados" name="dados"><br>
+            </div>
+            <br>
+            <div>
+                <legend>Conhecimentos</legend>
+                <label for="dados">HTML:</label>
+                <input type="range"><br>
+                <label for="dados">CSS:</label>
+                <input type="range"><br>
+                <label for="dados">JS:</label>
+                <input type="range"><br>
+            </div>
+
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Informações adicionais:</legend>
+            <textarea name="message" rows="10" cols="30">Digite a sua mensagem</textarea> <br>
+        </fieldset>
+        <br>
+        <input type="reset" value="Redefinir">
+
+        <button type="button" onclick="alert('Parabéns, você completou o formulário!')">
+            Pronto!
+        </button>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+</body>
+
+</html>
