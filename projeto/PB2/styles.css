@@ -1,0 +1,298 @@
+/********************************* RESET **********************************/
+
+*{
+    background: var(--background-color);
+    color:var(--text-color);
+}
+
+img{
+    width: 50%;
+    height: auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.textmenu{
+    font: 700 var(--title-font-size) var(--title-font);
+    color: var(--title-color);
+    -webkit-font-smoothing: auto;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+section{
+    padding: 5rem 0;
+}
+h1{
+    color: var(--base-color);
+    font-size: 3rem;
+}
+h2{
+    color: #dfd3d3;
+    font-size: 2rem;
+}
+
+/******************************** VARIABLES ******************************/
+:root{
+    /* colors */
+--hue: 159;
+/* HSL color mode */
+--background-color: hsl(var(--hue) 0% 0%);
+--text-color: hsl(0 100% 100%);
+--base-color: hsl(199 78% 47%);
+ --base-color-second: hsl(199, 67%, 31%);;
+/*--base-color-alt: hsl(var(--hue) 57% 53%);
+--title-color: hsl(var(--hue) 41% 10%);
+--text-color: hsl(0 0% 46%);
+--text-color-light: hsl(0 0% 98%);
+--body-color: hsl(0 0% 98%); */
+
+/* fonts */
+--title-font-size: 1.875rem;
+--title-font: sans-serif;
+}
+
+/******************************** FORMULÁRIOS ******************************/
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 4.5rem;
+}
+.form{
+    width: 18.75rem;
+    height: 18.75rem;
+}
+
+.form input{
+    border-color: var(--base-color);
+    border-radius: 0.5rem;
+    padding: 0.9375rem;
+    margin: 0.3125rem;
+    width: 16.25rem;
+    height: 1rem;
+}
+
+.form .botao{
+    padding: 0.625rem;
+    border-radius: 0.5rem;
+    width: 18.25rem;
+    height: 2.5rem;
+    background: var(--base-color);
+    cursor: pointer;
+}
+
+.form h1{
+    color: var(--base-color);
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.form .botao:hover{
+    background: var(--base-color-second);
+    border-color: var(--base-color-second);
+}
+
+/* .form .checkbox{
+    display: flex; 
+    text-align: right;
+    align-content: flex-start;
+    flex-direction: row;
+    justify-content:left;
+    align-items:flex-start;
+    display:inline-block;
+    /* /* float: left; 
+} */
+
+/******************************** MENU ******************************/
+#header{
+    border-bottom: 1px solid #1a1a1a;
+    margin-bottom: 2rem;
+    display: flex;
+
+    width: 100%;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+}
+nav.container2{
+    display: flex;
+    justify-content: space-between;
+    height: 4.5rem;
+    align-items: center;
+    width: 100%;
+}
+
+nav.container2 ul li {
+    text-align: center;
+}
+
+nav.container2 ul li a{
+    transition: 0.3s;
+    position: relative;
+}
+nav.container2 ul li a:hover{
+    color: var(--base-color);
+}
+
+nav.container2 ul li a::after{
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: var(--base-color);
+
+    position: absolute;
+    left: 0;
+    bottom: -1.5rem;
+
+    transition: width 0.2s;
+}
+
+nav.container2 ul li a:hover::after{
+    width: 100%;
+}
+
+nav .menu{
+    opacity: 0;
+    visibility: hidden;
+    top: -20rem;
+    transition: 0.2s;
+}
+
+nav .menu ul{
+    display: none;
+}
+
+/* Mostar menu  */
+
+nav.show .menu {
+    opacity: 1;
+    visibility: visible;
+
+    background: var(--background-color);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: grid;
+    place-content: center;
+}
+
+nav.container2.show ul.grid{
+    gap: 4rem;
+}
+
+nav.show .menu ul{
+    display: grid;
+}
+
+/* Toggle menu  */
+
+.toggle{
+    color: var(--base-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+nav.container2 .icon-close{
+    visibility: hidden;
+    opacity: 0;
+
+    position: absolute;
+    top: -1.5rem;
+    right: 1.5rem;
+
+    transition: 0.2s;
+}
+
+nav.container2.show div.icon-close{
+    visibility: visible;
+    opacity: 1;
+    top: 1.5rem;
+}
+
+
+/******************************** LAYOUT ******************************/
+
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+/******************************** CONTEÚDO ******************************/
+
+.conteudos.grid{
+    gap: 1.5rem;
+}
+
+.conteudo{
+    padding: 3.625rem 2rem;
+    box-shadow: 0px 0px 12px rgba(185, 181, 181, 0.08);
+    border-bottom: 0.25rem solid var(--base-color);
+    border-radius: 0.25rem .25rem 0 0;
+    text-align: center;
+}
+
+.conteudos{
+    padding: 0.5rem;
+    /* position: absolute; */
+}
+
+/* swiper */
+
+.swiper-slide {
+    height: auto;
+    padding: 1rem 1rem;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--base-color);
+}
+
+/******************************** PERFIL******************************/
+
+.perfil{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    bottom: 4.5rem;
+
+    justify-content: space-between;
+}
+
+/******************************** ANIME******************************/
+
+/* .trailer{
+    width: 100;
+    height: 400;
+} */
+
+q{
+    display: flex;
+    text-align: center;
+    
+}
+
+/* .sinopse{
+    width: 43.75rem;
+    height: auto;
+} */
+
+
