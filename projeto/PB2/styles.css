@@ -3,6 +3,10 @@
 *{
     background: var(--background-color);
     color:var(--text-color);
+    background-image: url(
+        "assets/fundo/pngegg_3_5.png"
+    );
+    background-size: cover;
 }
 
 img{
@@ -36,8 +40,20 @@ h1{
     font-size: 3rem;
 }
 h2{
-    color: #dfd3d3;
+    color: hsl(180, 4%, 95%);
     font-size: 2rem;
+}
+
+.logo{
+    font: 700 2rem var(--title-font);
+    color: var(--base-color);
+}
+
+body{
+    font: 400 1rem var(--body-font);
+    color: var(--text-color);
+    background: var(--background-color);
+    -webkit-font-smoothing: antialiased;
 }
 
 /******************************** VARIABLES ******************************/
@@ -46,18 +62,17 @@ h2{
 --hue: 159;
 /* HSL color mode */
 --background-color: hsl(var(--hue) 0% 0%);
---text-color: hsl(0 100% 100%);
+--text-color: hsl(180, 4%, 95%);
 --base-color: hsl(199 78% 47%);
- --base-color-second: hsl(199, 67%, 31%);;
-/*--base-color-alt: hsl(var(--hue) 57% 53%);
---title-color: hsl(var(--hue) 41% 10%);
---text-color: hsl(0 0% 46%);
---text-color-light: hsl(0 0% 98%);
---body-color: hsl(0 0% 98%); */
+ --base-color-second: hsl(199, 67%, 31%);
+ --title-font:"Poppins", sans-serif;
+ --body-font: "DM sans", sans-serif;
+
 
 /* fonts */
 --title-font-size: 1.875rem;
 --title-font: sans-serif;
+
 }
 
 /******************************** FORMULÁRIOS ******************************/
@@ -106,16 +121,7 @@ h2{
     border-color: var(--base-color-second);
 }
 
-/* .form .checkbox{
-    display: flex; 
-    text-align: right;
-    align-content: flex-start;
-    flex-direction: row;
-    justify-content:left;
-    align-items:flex-start;
-    display:inline-block;
-    /* /* float: left; 
-} */
+
 
 /******************************** MENU ******************************/
 #header{
@@ -251,7 +257,6 @@ nav.container2.show div.icon-close{
 
 .conteudos{
     padding: 0.5rem;
-    /* position: absolute; */
 }
 
 /* swiper */
@@ -279,20 +284,79 @@ nav.container2.show div.icon-close{
 
 /******************************** ANIME******************************/
 
-/* .trailer{
-    width: 100;
-    height: 400;
-} */
-
-q{
+.q{
     display: flex;
     text-align: center;
     
 }
 
-/* .sinopse{
-    width: 43.75rem;
-    height: auto;
-} */
+.central{
+display: flex;
+justify-content: center;
+}
+
+/************************************ MEDIA QUERIES **********************************************/
+
+/* extra large devices: 1200 > */
+@media (min-width: 1200px) {
+
+    nav .menu {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+    }
+
+    nav .menu ul {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .textmenu{
+        font: 400 1rem var(--body-font);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    nav .icon-menu {
+        display: none;
+    }
+
+    .logo{
+        font: 700 2.65rem var(--title-font);
+    color: var(--base-color);
+    }
+
+    #header{
+        left: 0.5rem;
+    } 
+
+    .conteudos.grid{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-flow: column;
+    }
+    
+    .conteudo{
+        padding-left: 3rem;
+        padding-right: 3rem;
+        grid-auto-flow: column;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    .perfil img{
+        width: 25%;
+        height: auto;
+    }
+
+    .perfil, .center{
+        justify-content:flex-start;
+    }
 
 
+/* large devices 1023 > */
+/* large devices: 992 > */
+@media (min-width:992px) {
+    :root {
+        --title-font-size: 2.25rem;
+        --subtitle-font-size: 1.125rem;
+    }
+} 
+/* medium devices: 767 > */
