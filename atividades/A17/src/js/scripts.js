@@ -1,6 +1,40 @@
 const button = document.getElementById('button')
 
-button.addEventListener('click', (event) => {
+function validaCPF(varCPF) {
+    varCPF = varCPF.replace(/\D+/g, '')
+    var Soma
+    var Resto
+    Soma = 0
+    var i
+    if (varCPF == '00000000000') return false
+    if (varCPF == '99999999999') return false
+    if (varCPF == '88888888888') return false
+    if (varCPF == '77777777777') return false
+    if (varCPF == '66666666666') return false
+    if (varCPF == '55555555555') return false
+    if (varCPF == '44444444444') return false
+    if (varCPF == '33333333333') return false
+    if (varCPF == '22222222222') return false
+    if (varCPF == '11111111111') return false
+
+    for (i = 1; i <= 9; i++)
+      Soma = Soma + parseInt(varCPF.substring(i - 1, i)) * (11 - i)
+    Resto = (Soma * 10) % 11
+  
+    if (Resto == 10 || Resto == 11) Resto = 0
+    if (Resto != parseInt(varCPF.substring(9, 10))) return false
+  
+    Soma = 0
+    for (i = 1; i <= 10; i++)
+      Soma = Soma + parseInt(varCPF.substring(i - 1, i)) * (12 - i)
+    Resto = (Soma * 10) % 11
+  
+    if (Resto == 10 || Resto == 11) Resto = 0
+    if (Resto != parseInt(varCPF.substring(10, 11))) return false
+    return true
+  }
+
+    button.addEventListener('click', (event) => {
     event.preventDefault()
 
     const email = document.getElementById('email')
@@ -24,7 +58,7 @@ button.addEventListener('click', (event) => {
         phone.classList.remove("errorInput")
     }
 
-    if (cpf.value == '' || cpf.value.length != 14) {
+    if (cpf.value == '' || cpf.value.length != 14 || !validaCPF(cpf.value)) {
         cpf.classList.add("errorInput")
     } else {
         cpf.classList.remove("errorInput")
