@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fetch</h1>
+    <div>CEP:<input type="text" name="cep" /></div>
+    <div>Cidade:<input type="text" name="city" /></div>
+    <div>Estado:<input type="text" name="uf" /></div>
+
+    <script>   
+
+    const inputCep = document.querySelector('[name=cep]')
+    const inputCity = document.querySelector('[name=city]')
+    const inputUF = document.querySelector('[name=uf]')
+
+    //Criar uma promisse para receber os dados
+    inputCep.addEventListener('blur', event => {
+    let cep = event.target.value
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+      //parametro resposta recebe
+      .then(x => x.json())
+      .then(dados => {
+          inputCity.value = dados.localidade
+          inputUF.value = dados.uf
+        })
+      .catch(error => console.log(error))
+  })
+    </script>
+
+
+</body>
+</html>
