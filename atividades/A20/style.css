@@ -1,0 +1,23 @@
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+.input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input{
+display: flex;
+margin: 1rem;
+}
+
+#renderResults{
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
